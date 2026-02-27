@@ -20,16 +20,22 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-# Maintainer: Truocolo <truocolo@aol.com>
-# Maintainer: Truocolo <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
-# Maintainer: Pellegrino Prevete (dvorak) <pellegrinoprevete@gmail.com>
-# Maintainer: Pellegrino Prevete (dvorak) <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
-# Maintainer: Jeremy Kescher <jeremy@kescher.at>
-# Based on Arch `fmt` package
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Contributor: Mihai Bişog <mihai.bisog@gmail.com>
+# Maintainers:
+#   Truocolo
+#     <truocolo@aol.com>
+#     <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
+#   Pellegrino Prevete
+#     <pellegrinoprevete@gmail.com>
+#     <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
+#   Jeremy Kescher
+#     <jeremy@kescher.at>
+#   Maxime Gauduin
+#     <alucryd@archlinux.org>
+# Contributors:
+#   Mihai Bişog
+#     <mihai.bisog@gmail.com>
 
-_os="$( \
+_os="$(
   uname \
     -o)"
 if [[ "${_os}" == "GNU/Linux" ]]; then
@@ -39,10 +45,10 @@ elif [[ "${_os}" == "Android" ]]; then
   _libc="ndk-sysroot"
 fi
 _pkg=fmt
-_majver="10"
+_majver="11"
 pkgname="${_pkg}${_majver}"
-pkgver="${_majver}.2.1"
-_commit="e69e5f977d458f2650bb346dadf2ad30c5320281"
+pkgver="${_majver}.0.2"
+_commit="0c9fce2ffefecfdce794e1859584e25877b7b592"
 pkgrel=1
 pkgdesc='Open-source formatting library for C++'
 arch=(
@@ -88,12 +94,12 @@ _url="${_http}/${_ns}/${_pkg}"
 source=(
   "git+${_url}.git#${_tag_name}=${_tag}"
   "fmt-no-pip-no-virtualenv.patch"
-  "${_pkg}-${_majver}.0.0-sphinx.patch"
+  # "${_pkg}-${_majver}.0.0-sphinx.patch"
 )
 b2sums=(
-  'e79699a46afe099007f9ad4b5ba063fbd8a90575535cd006452c7e648d4a6131460407ecfeb824c7e4d64d793f9e09ff2953afd7f997cd4a273b9422b832e46b'
+  "SKIP"
   '0bc421afdc4c2527525ce2e21740c9f72e05431394fb4710c1a8fa6d3bb2ee20d0630e2a76ddbac3c0ba27c1ab08f0c8e27d060def1370721b1c94246cbbf0ff'
-  '4eabdf38317e22e6b650b91821f1fab50bb3641e4f9a63847cb9b823becd3a4106fe47df37c8dc886f5fe1d1d3e529136c867459105df07c359582214d6fa01f'
+  # '4eabdf38317e22e6b650b91821f1fab50bb3641e4f9a63847cb9b823becd3a4106fe47df37c8dc886f5fe1d1d3e529136c867459105df07c359582214d6fa01f'
 )
 
 prepare() {
