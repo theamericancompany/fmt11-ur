@@ -94,22 +94,22 @@ _ns="${_pkg}lib"
 _url="${_http}/${_ns}/${_pkg}"
 source=(
   "git+${_url}.git#${_tag_name}=${_tag}"
-  "fmt-no-pip-no-virtualenv.patch"
+  # "fmt-no-pip-no-virtualenv.patch"
   # "${_pkg}-${_majver}.0.0-sphinx.patch"
 )
 b2sums=(
-  "SKIP"
-  '0bc421afdc4c2527525ce2e21740c9f72e05431394fb4710c1a8fa6d3bb2ee20d0630e2a76ddbac3c0ba27c1ab08f0c8e27d060def1370721b1c94246cbbf0ff'
+  '18b6d66c2159b2f8bd0baf2e1df7514fde09cf6a25441710d40e386abd9baa49b62859c4d8a71b77f0d1550c32fc62826c95fdacf4397e24cc6ea205a0c50798'
+  # '0bc421afdc4c2527525ce2e21740c9f72e05431394fb4710c1a8fa6d3bb2ee20d0630e2a76ddbac3c0ba27c1ab08f0c8e27d060def1370721b1c94246cbbf0ff'
   # '4eabdf38317e22e6b650b91821f1fab50bb3641e4f9a63847cb9b823becd3a4106fe47df37c8dc886f5fe1d1d3e529136c867459105df07c359582214d6fa01f'
 )
 
 prepare() {
   cd \
     "${_pkg}"
-  patch \
-    -Np1 \
-    -i \
-    "../fmt-no-pip-no-virtualenv.patch"
+  # patch \
+  #   -Np1 \
+  #   -i \
+  #   "../fmt-no-pip-no-virtualenv.patch"
   # patch \
   #   -Np1 \
   #   -i \
